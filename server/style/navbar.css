@@ -1,0 +1,47 @@
+body {
+    padding-top: 70px;
+}
+
+.navbar {
+    background-color: #FF9A00;
+}
+
+.fa-bars-custom {
+    color: #FFFFFF;
+}
+
+.navbar-brand {
+    color: #FFFFFF;
+}
+
+.btn-search {
+    background-color: #FFFFFF;
+}
+
+.fa-search-custom {
+    color: #111111;
+}
+
+.navbar-custom .navbar-nav>li>a {
+    color: #FFFFFF;
+}
+
+
+@media screen and (min-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+
+    form[role="search"].form-custom {
+        padding-right: 50px;
+    }
+
+    input[type=text].form-custom {
+        width: 300px;
+    }
+
+    .navbar-nav>li {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
