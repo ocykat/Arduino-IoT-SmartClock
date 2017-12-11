@@ -24,11 +24,13 @@ const char WEATHER_GET_REQUEST[] = "GET https://api.thingspeak.com/apps/thinghtt
 int hcmcTemp = 0;
 int hcmcRH = 0;
 
+
 void esp_flush() {
     while (esp.available()) {
         esp.read();
     }
 }
+
 
 bool esp_test() {
     delay(1000);
@@ -207,6 +209,7 @@ bool esp_setSingleConnection() {
     }
 }
 
+
 bool esp_startTCPConnection() {
     delay(1000);
 
@@ -240,15 +243,6 @@ bool esp_startTCPConnection() {
     }
 }
 
-void setup() {
-    Serial.begin(9600);
-    esp.begin(9600);
-    while (!esp_test());
-    while (!esp_reset());
-    while (!esp_setStationMode());
-    while (!esp_connectToAP(SSID, PASS));
-    while (!esp_setSingleConnection());
-}
 
 int esp_getTemperature(const char * data) {
 
@@ -272,9 +266,10 @@ int esp_getTemperature(const char * data) {
     return res;
 }
 
+
 int esp_getHumidity(const char* data) {
     
-	// Find the pointer to the substring
+    // Find the pointer to the substring
     char* p = strstr(data, "RH");
     if (p == NULL) return 0;
     p += 3;
@@ -292,6 +287,17 @@ int esp_getHumidity(const char* data) {
     strncpy(resStr, p, len);
     int res = atoi(resStr);
     return res;
+}
+
+
+void setup() {
+    Serial.begin(9600);
+    esp.begin(9600);
+    while (!esp_test());
+    while (!esp_reset());
+    while (!esp_setStationMode());
+    while (!esp_connectToAP(SSID, PASS));
+    while (!esp_setSingleConnection());
 }
 
 
