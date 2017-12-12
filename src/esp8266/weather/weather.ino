@@ -3,8 +3,8 @@
 #define debug Serial.println
 
 /* ***** ESP8266 ***** */
-const int esp_rx_pin = 2; // -> esp's rx
-const int esp_tx_pin = 3; // -> esp's tx
+const int esp_rx_pin = 2; // -> esp's rx (A8 on MEGA)
+const int esp_tx_pin = 3; // -> esp's tx (A9 on MEGA)
 
 SoftwareSerial esp(esp_tx_pin, esp_rx_pin);
 
@@ -19,7 +19,7 @@ const char PORT[] = "80";
 const char THINGSPEAK_SERVER[] = "api.thingspeak.com";
 
 // Weather
-const char WEATHER_GET_REQUEST[] = "GET https://api.thingspeak.com/apps/thinghttp/send_request?api_key=H2JW3VZGLR6GKRE9 HTTP/1.1\r\nHost:api.thingspeak.com\r\n\r\n";
+const char WEATHER_GET_REQUEST[] = "GET https://api.thingspeak.com/apps/thinghttp/send_request?api_key=****** HTTP/1.1\r\nHost:api.thingspeak.com\r\n\r\n";
 
 int hcmcTemp = 0;
 int hcmcRH = 0;
