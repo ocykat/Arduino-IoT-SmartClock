@@ -4,8 +4,8 @@
 #define debug Serial.println
 
 /* ***** ESP8266 ***** */
-const int esp_rx_pin = A8; // -> esp's rx
-const int esp_tx_pin = A9; // -> esp's tx
+const int esp_rx_pin = A8; // -> esp's rx (2 on UNO)
+const int esp_tx_pin = A9; // -> esp's tx (3 on UNO)
 
 SoftwareSerial esp(esp_tx_pin, esp_rx_pin);
 
@@ -422,5 +422,5 @@ void loop() {
         debug("Error: Could not start connection. Trying again...");
     }
 	
-	debug(3000);
+    debug(3000);
 }
