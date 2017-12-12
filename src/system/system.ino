@@ -15,8 +15,8 @@ const int esp_tx_pin = A9; // -> esp's tx
 SoftwareSerial esp(esp_tx_pin, esp_rx_pin);
 
 // AP
-const char SSID[] = "DUNG_HOA";
-const char PASS[] = "0123456789";
+const char SSID[] = "";
+const char PASS[] = "";
 
 // Port
 const char PORT[] = "80";
